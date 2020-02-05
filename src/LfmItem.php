@@ -138,8 +138,9 @@ class LfmItem
         if ($this->isImage()) {
             return 'fa-image';
         }
-
-        return $this->extension();
+        
+        return $this->helper->config('file_icon_array')[$this->extension()] 
+            ?? $this->extension();
     }
 
     public function type()
